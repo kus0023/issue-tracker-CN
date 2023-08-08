@@ -9,7 +9,7 @@
                         <div class="card-content white-text">
                             <span class="card-title"><%= project.name %></span>
                             <p><%= project.description %></p>
-                            <small><%= project.author.name %></small>
+                            <small><%= project.author %></small>
                         </div>
                     </div>
                 </a>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red pulse tooltipped" href="/projects/create" data-position="left" 
+        <a class="btn-floating btn-large red pulse tooltipped" href="./create" data-position="left" 
         data-tooltip="Create a new Project">
           <i class="large material-icons">add</i>
         </a>

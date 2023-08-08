@@ -5,6 +5,6 @@ router.get('/', projects.getProjects);
 router.post('/', projects.addProject);
 
 
-router.get('/create', projects.createProject);
+router.get('/create', projects.getCreateProject);
 
 module.exports = router;

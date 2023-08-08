@@ -60,6 +60,10 @@ class MyAppData {
     getAllProject(){
         return this.projects;
     }
+
+    addProject(name, desc, author){
+        this.projects.push(new Project(name, desc, author));
+    }
 }
 
 const myApp = new MyAppData();
