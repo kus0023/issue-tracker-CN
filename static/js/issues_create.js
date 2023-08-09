@@ -28,43 +28,27 @@ document.addEventListener('DOMContentLoaded', function () {
     formElem.addEventListener('submit', function (ev){
         ev.preventDefault();
 
-        //Getting all the form data
-        const formData = new FormData(formElem);
-
-        //get the labels data from chip
-        //convert them into array of string
-        // data from chipData will be in form of [{key: 'chip1'}, {key: 'chip2'}]
-        //convert that into ['chip1', 'chip2']
+        console.log(instance.chipsData);
 
         const labels = instance.chipsData.map(e=>e.tag);
 
-        labels.forEach(label => {
-            formData.append('labels', label);
+        labels.forEach(label=>{
+            const inputElem = document.createElement('input');
+            inputElem.name = "labels";
+            inputElem.value= label
+            inputElem.hidden = true;
+            formElem.appendChild(inputElem);
         });
+        
 
-        //create the issue by calling the API
-        createIssueAPICall(formData);
-
+        formElem.submit()
     });
 
 });
 
-async function createIssueAPICall(formData){
+async function fetchLabels(){
 
-    try {
-
-        const res = await fetch("/api/v1/issues", {
-            method: 'POST',
-            body: formData
-        });
     
-        const jsonRes = await res.json();
-    
-        location.replace('/issues'+location.search)
-        
-    } catch (error) {
-        console.log(error);
-    }
     
 }
 

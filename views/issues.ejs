@@ -43,14 +43,14 @@
               <h4><%= issue.title %></h4>
             </span>
             <p><%= issue.description %></p>
-            <small>Author: <%= issue.author.name %></small>
+            <small>Author: <%= issue.author %></small>
           </div>
           <div class="card-action">
 
             <!-- All the labels -->
             <% issue.labels.forEach(label=>{%>
               <div class="chip">
-                <%= label.name %>
+                <%= label %>
               </div>
             <%})%>
             
