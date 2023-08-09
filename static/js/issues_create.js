@@ -4,11 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         placeholder: "Add labels",
         secondaryPlaceholder: "+labels",
         autocompleteOptions: {
-            data: {
-                'Apple': null,
-                'Microsoft': null,
-                'Google': null
-            },
+            data: {}, // late udpate with fetch call
             limit: Infinity,
             minLength: 1
         },
@@ -19,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     let instance = M.Chips.init(elem, options);
+
+    fetchLabels(instance);
 
 
     //Setting up the form data
@@ -46,9 +44,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-async function fetchLabels(){
+async function fetchLabels(instance){
 
+    //Parsing from Query paramaeter
+    let projectId = location.search.split('=')[1];
+
+    let res = await fetch('/labels?projectId='+projectId);
+    let resJson = await res.json();
+
+    //Parsing data in format that autocomplete data is there.
+    const data = {}
     
+    resJson.labels.forEach(e=>{
+        data[`${e}`] = null
+    });
+
+    //Updating the autocomplete
+    instance.autocomplete.updateData({
+        ...data
+    });
     
 }
 

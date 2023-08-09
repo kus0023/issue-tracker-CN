@@ -3,6 +3,8 @@ class Project{
     name
     description
     author
+    labels
+    issues
    
 
     constructor(name, desc, author){
