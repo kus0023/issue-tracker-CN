@@ -9,14 +9,18 @@
 
     <div class="col input-field s12 m6">
       <select multiple id="author-select" name="authors">
-        <!-- Filled dynamically -->
+        <% locals.authors.forEach((author)=>{%>
+          <option value="<%=author %>"><%=author %></option>
+        <%}) %>
       </select>
       <label for="author-select">Select Author</label>
     </div>
 
     <div class="col input-field s12 m6">
       <select multiple id="label-select" name="labels">
-        <!-- filled dynamically -->
+        <% locals.labels.forEach((label)=>{%>
+          <option value="<%=label %>"><%=label %></option>
+        <%}) %>
       </select>
       <label for="label-select">Select Label</label>
     </div>

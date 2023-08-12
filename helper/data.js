@@ -58,6 +58,7 @@ class MyAppData {
     initMyData(){
         this.projects.push(new Project('First Project', 'Description', 'Kus_Maurya'));
         this.projects[0].addIssue('First Issue', 'Description: First issue created', 'Cristina', ['Google', 'First']);
+        this.projects[0].addIssue('Second Issue', 'Description: Second issue created', 'Mario', ['Beginner', 'First', 'Bug']);
     }
 
     getAllProject(){

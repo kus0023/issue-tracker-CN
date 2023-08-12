@@ -11,18 +11,18 @@ document.addEventListener('DOMContentLoaded', function () {
 function initializeAuthorSelect() {
 
     let elem = document.getElementById('author-select');
-    elem.innerHTML = '';
+    // elem.innerHTML = '';
 
-    let authors = ['Kus', 'John', 'Marry'];
+    // let authors = ['Kus', 'John', 'Marry'];
 
-    authors.forEach(author => {
+    // authors.forEach(author => {
 
-        let optionElem = document.createElement('option');
-        optionElem.innerHTML = author;
-        optionElem.value = author;
+    //     let optionElem = document.createElement('option');
+    //     optionElem.innerHTML = author;
+    //     optionElem.value = author;
 
-        elem.append(optionElem);
-    });
+    //     elem.append(optionElem);
+    // });
 
 
     const options = {};
@@ -33,18 +33,18 @@ function initializeAuthorSelect() {
 function initializeLabelSelect() {
 
     let elem = document.getElementById('label-select');
-    elem.innerHTML = '';
+    // elem.innerHTML = '';
 
-    let labels = ['Bigginer', 'Bug', 'enhancement'];
+    // let labels = ['Bigginer', 'Bug', 'enhancement'];
 
-    labels.forEach(label => {
+    // labels.forEach(label => {
 
-        let optionElem = document.createElement('option');
-        optionElem.innerHTML = label;
-        optionElem.value = label;
+    //     let optionElem = document.createElement('option');
+    //     optionElem.innerHTML = label;
+    //     optionElem.value = label;
 
-        elem.append(optionElem);
-    });
+    //     elem.append(optionElem);
+    // });
 
     const options = {};
     let instances = M.FormSelect.init(elem, options);

@@ -14,7 +14,21 @@ module.exports.getIssues = function (req, res) {
 
         index = Number.parseInt(index);
 
-        return res.render('issues', {issues: mydata.projects[index].issues, projectId: index, labels: mydata.projects[index].labels});
+        let issues = mydata.projects[index].issues;
+
+        let projectId = index;
+
+        let labels = mydata.projects[index].labels;
+
+        let authors = [];
+
+        issues.forEach(issue => {
+            authors.push(issue.author);
+        });
+
+        // console.log({issues, projectId, labels, authors});
+
+        return res.render('issues', {issues, projectId, labels, authors });
     }else{
         return res.redirect('back');
     }
